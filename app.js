@@ -15,7 +15,7 @@ async function copyEmail(){try{await navigator.clipboard.writeText("ststudiosng@
   if(loader){
     let n=0;
     if(num&&/^\d/.test(num.textContent.trim())){const t=setInterval(()=>{n+=Math.ceil(Math.random()*13);if(n>=100){n=100;clearInterval(t);setTimeout(()=>loader.classList.add('done'),300);setTimeout(()=>loader.remove(),1100)}num.innerHTML=n+'<span style="font-size:24px">%</span>';if(fill)fill.style.width=n+'%'},110)}
-    else{setTimeout(()=>loader.classList.add('done'),5000);setTimeout(()=>loader.remove(),5800)}
+    else{setTimeout(()=>loader.classList.add('done'),15000);setTimeout(()=>loader.remove(),15800)}
   }
   const bar=$('#bar');
   addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);if(bar)bar.style.transform=`scaleX(${p})`},{passive:true});
