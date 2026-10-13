@@ -26,7 +26,13 @@ const others=PROJECTS.filter(x=>x.id!==p.id).slice(0,2);
 w.innerHTML=`
 <div class="pills"><span class="pillx">${p.full}</span><span class="pillx">${p.r}</span><span class="pillx">${p.g.length+1} assets</span></div>
 <h1 class="hero-h" style="font-size:clamp(40px,6vw,76px)">${p.t}</h1>
-<p class="hero-sub">${p.d}</p>
+<p class="hero-sub">"${p.d}"</p>
+<div class="grid2" style="margin-top:26px">
+<div class="sol rv vis"><div class="sol-n">01 — About the brand</div><p style="margin-top:10px">${p.o||""}</p></div>
+<div class="sol rv vis"><div class="sol-n">02 — The craft</div><p style="margin-top:10px">${p.v||""}</p></div>
+</div>
+<div class="sol rv vis" style="max-width:none"><div class="sol-n">03 — Why it works</div><p style="margin-top:10px">Every layout is built to communicate the brand in under two seconds: one clear message per visual, professional typography, and a consistent visual system — so the brand looks established, earns attention, and converts scrollers into customers.</p></div>
+<div class="sec-head"><h2>Gallery <span class="count">(${p.g.length+1})</span></h2></div>
 <img class="pcover" src="${p.img}"/>
 <div class="pgrid">${p.g.map(g=>`<img loading="lazy" src="${g}"/>`).join("")}</div>
 <div class="sec-head"><h2>Next</h2><a href="work.html" style="font-size:13px">See all →</a></div>
