@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Project — Sam Henry®</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="bar"></div>
+<header class="nav">
+<a class="logo" href="index.html">Sam Henry®</a>
+<nav class="links"><a class="link" href="index.html">Home</a><a class="link on" href="work.html">Work</a><a class="link" href="about.html">About</a></nav>
+<a class="copy" href="work.html" style="text-decoration:none">← all work</a>
+</header>
+<div class="wrap" id="wrap" style="margin-top:40px"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+const id=new URLSearchParams(location.search).get('id');
+const p=PROJECTS.find(x=>x.id===id)||PROJECTS[0];
+document.title=p.t+" — Sam Henry®";
+const w=document.getElementById('wrap');
+const others=PROJECTS.filter(x=>x.id!==p.id).slice(0,2);
+w.innerHTML=`
+<div class="pills"><span class="pillx">${p.full}</span><span class="pillx">${p.r}</span><span class="pillx">${p.g.length+1} assets</span></div>
+<h1 class="hero-h" style="font-size:clamp(40px,6vw,76px)">${p.t}</h1>
+<p class="hero-sub">${p.d}</p>
+<img class="pcover" src="${p.img}"/>
+<div class="pgrid">${p.g.map(g=>`<img loading="lazy" src="${g}"/>`).join("")}</div>
+<div class="sec-head"><h2>Next</h2><a href="work.html" style="font-size:13px">See all →</a></div>
+<div class="grid2">${others.map(o=>`<a class="card vis" href="project.html?id=${o.id}"><img loading="lazy" src="${o.img}"/><div class="meta"><div class="cat">${o.full}</div><h3>${o.t}</h3></div></a>`).join("")}</div>
+<div class="big-cta"><h2>Want this for your brand?</h2><a class="btn btn-p" href="mailto:ststudiosng@gmail.com">Start a project →</a></div>`;
+setTimeout(()=>window.__reveal(".pgrid img"),300);
+</script>
+</body>
+</html>

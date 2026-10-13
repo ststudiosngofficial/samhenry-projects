@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Sam Henry® — Bold brands, Better design</title>
+<meta name="description" content="Sam Henry — detail-oriented brand designer for SaaS, fintechs, agencies, real estate. Print, banners, flyers."/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+.ido-loader{display:flex;align-items:baseline;gap:12px;font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-1px}
+.ido-words{position:relative;display:inline-block;min-width:9ch;text-align:left;color:var(--accent,#fff)}
+.ido-words span{position:absolute;left:0;top:0;opacity:0;white-space:nowrap;animation:idorot 5s infinite}
+.ido-words span:nth-child(1){animation-delay:0s}.ido-words span:nth-child(2){animation-delay:.5s}.ido-words span:nth-child(3){animation-delay:1s}.ido-words span:nth-child(4){animation-delay:1.5s}.ido-words span:nth-child(5){animation-delay:2s}.ido-words span:nth-child(6){animation-delay:2.5s}.ido-words span:nth-child(7){animation-delay:3s}.ido-words span:nth-child(8){animation-delay:3.5s}.ido-words span:nth-child(9){animation-delay:4s}.ido-words span:nth-child(10){animation-delay:4.5s}
+@keyframes idorot{0%{opacity:0;transform:translateY(14px)}2%,8%{opacity:1;transform:none}11%,100%{opacity:0;transform:translateY(-14px)}}
+<style>
+.hero-full{min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px 20px 50px}
+.hero-full .pills{margin:0 0 20px}
+.hero-full .hero-h{font-size:clamp(48px,10vw,110px)}
+.hero-stats{display:flex;gap:34px;margin-top:36px;justify-content:center;text-align:center}
+.hstat-n{font-size:30px;font-weight:800}
+.hstat-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.5;margin-top:4px}
+.hero-nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.scrollcue{margin-top:44px;font-size:11px;letter-spacing:3px;opacity:.45;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div id="loader"><div class="ido-loader"><span>I do</span><span class="ido-words"><span>Branding</span><span>Logo Design</span><span>Social Media</span><span>Brand Strategy</span><span>Content Design</span><span>Print Design</span><span>Flyer Design</span><span>Brand Growth</span><span>Web Design</span><span>Ad Creatives</span></span></div></div>
+<header class="nav">
+<a class="logo" href="index.html">Sam Henry®</a>
+<nav class="links">
+<a class="link on" href="index.html">Home</a>
+<a class="link" href="work.html">Work<sup>18</sup></a>
+<a class="link" href="about.html">About</a>
+<a class="link" href="mailto:ststudiosng@gmail.com">Contact</a>
+</nav>
+<button class="copy" onclick="copyEmail()" id="copyTop">Start a project</button>
+</header>
+
+<main class="wrap hero-full">
+<div class="pills">
+<span class="pillx">SaaS</span><span class="pillx">Fintech</span><span class="pillx">Real Estate</span><span class="pillx">Print & Flyers</span>
+</div>
+<h1 class="hero-h">Bold brands,<br/><em>Better design.</em></h1>
+<p class="hero-sub">Sam Henry — detail-oriented designer with 5+ years. Brand visuals for SaaS products, fintechs, agencies and real estate. Plus print, banners and flyers.</p>
+<div class="btnrow">
+<a class="btn btn-p" href="work.html">View work →</a>
+<a class="btn btn-g" href="about.html">About me</a>
+</div>
+<div class="hero-stats">
+<div><div class="hstat-n">18</div><div class="hstat-l">projects</div></div>
+<div><div class="hstat-n">120</div><div class="hstat-l">designs</div></div>
+<div><div class="hstat-n">5+</div><div class="hstat-l">years</div></div>
+</div>
+<div class="scrollcue">explore ↓</div>
+</main>
+
+<div class="wrap">
+<div class="foot"><span>© 2026 Sam Henry · Lagos</span><span><a href="work.html">Work →</a> · <a href="about.html">About →</a> · <a href="mailto:ststudiosng@gmail.com">Contact →</a></span></div>
+</div>
+<script src="app.js"></script>
+<script>setTimeout(()=>document.getElementById('loader').classList.add('done'),500);</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Work (18) — Sam Henry®</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div id="bar"></div>
+<header class="nav">
+<a class="logo" href="index.html">Sam Henry®</a>
+<nav class="links">
+<a class="link" href="index.html">Home</a>
+<a class="link on" href="work.html">Work<sup>18</sup></a>
+<a class="link" href="about.html">About</a>
+<a class="link" href="mailto:ststudiosng@gmail.com">Contact</a>
+</nav>
+<button class="copy" onclick="copyEmail()">Start a project</button>
+</header>
+<div class="wrap">
+<div class="pills" id="filters"></div>
+<h1 class="hero-h" style="font-size:clamp(40px,6vw,72px)">Work <span class="count">(18)</span></h1>
+<p class="hero-sub">Every project opens a full case page with all designs.</p>
+<div class="grid2" id="grid" style="margin-top:26px"></div>
+<div class="big-cta rv"><h2>Like what you see?</h2><p>Let's build yours next.</p><a class="btn btn-p" href="mailto:ststudiosng@gmail.com">Book a call →</a></div>
+<div class="foot"><span>© 2026 Sam Henry</span><span><a href="index.html">← home</a></span></div>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+let f="All";const cats=["All","Fintech","Telecom","FMCG","Crypto","Social","Creative","App","Real Estate"];
+const fe=document.getElementById('filters');
+function drawF(){fe.innerHTML="";cats.forEach(c=>{const n=c==="All"?PROJECTS.length:PROJECTS.filter(p=>p.c===c).length;const b=document.createElement('button');b.className='pillx';b.style.cursor='pointer';if(f===c){b.style.background='#111';b.style.color='#fff'}b.textContent=`${c} (${n})`;b.onclick=()=>{f=c;drawF();draw()};fe.appendChild(b)})}
+function draw(){const g=document.getElementById('grid');g.innerHTML="";PROJECTS.filter(p=>f==="All"||p.c===f).forEach(p=>{const a=document.createElement('a');a.className='card vis';a.href="project.html?id="+p.id;a.innerHTML=`<img loading="lazy" src="${p.img}"/><div class="meta"><div class="cat">${p.full} · ${p.r}</div><h3>${p.t}</h3><p>${p.d} — ${p.g.length} designs →</p></div>`;g.appendChild(a)})}
+drawF();draw();setTimeout(()=>window.__reveal(".card"),300);
+</script>
+</body>
+</html>
